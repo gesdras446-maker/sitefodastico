@@ -56,19 +56,36 @@ header{
     flex-direction: column; 
     gap: 30px;
     align-items: center;
-    word-spacing: 10px;
     margin-top: 25px;
+    display: flex;   
 }
-.card{
-    flex-direction: column;
-    padding: 10px 40px;
-    background-color: #D9D9D9;
-    color: #000000;
-    text-decoration: none;
+.card {
+    display: flex;            
+    flex-direction: row;          
+    justify-content: space-between; 
+    align-items: center;
+    width: 500px;                
+    padding: 15px 20px;        
+    background-color: #b1b1b1;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
+
 .card:hover {
-   background-color: #211f1f;
-   color : #ffffff;
+    background-color: #211f1f;
+    color: #ffffff;
+}
+.card span, .card div {
+    background-color: transparent !important;
+    padding: 0; 
+    margin: 0;
+}
+footer {
+    background-color: #6D0041;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
