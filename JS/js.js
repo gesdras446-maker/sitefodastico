@@ -12,12 +12,12 @@ function fechar() {
 
 function pegarDadosForm() {
     var empresa = document.getElementById('nomeEmpresa').value.trim();
-    var atividade = document.getElementById('nomeAtividade').value.trim();
+    var dataEntrega = document.getElementById('dataEntrega').value;
     var horas = parseFloat(document.getElementById('tempo').value);
     var valorTexto = document.getElementById('valor').value;
     var valorNumero = parseFloat(valorTexto.replace('R$:', '').replace('R$', '').replace(',', '.').trim());
-    if (!empresa || !atividade || !horas || !valorNumero) return null;
-    return { empresa: empresa, atividade: atividade, horas: horas, valorNumero: valorNumero };
+    if (!empresa || !dataEntrega || !horas || !valorNumero) return null;
+    return { empresa: empresa, dataEntrega: dataEntrega, horas: horas, valorNumero: valorNumero };
 }
 
 function salvarAtividade(multiplicador) {
@@ -30,7 +30,7 @@ function salvarAtividade(multiplicador) {
         id: Date.now(),
         empresa: dados.empresa,
         servico: servicoAtual,
-        atividade: dados.atividade,
+        dataEntrega: dados.dataEntrega,
         horas: dados.horas,
         urgencia: urgencia,
         precoTotal: 'R$: ' + precoFinal
@@ -50,6 +50,13 @@ function adicionarUrgente(multiplicador) {
 
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('atividadeForm');
+    var inputData = document.getElementById('dataEntrega');
+    
+    if (inputData) {
+        var hoje = new Date().toISOString().split('T')[0];
+        inputData.setAttribute('min', hoje);
+    }
+
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -69,7 +76,7 @@ function criarCard(atv, tipo) {
         '<div class="card-info">' +
         '<p><b>Empresa:</b> ' + atv.empresa + '</p>' +
         '<p><b>Servico:</b> ' + atv.servico + '</p>' +
-        '<p><b>Atividade:</b> ' + atv.atividade + '</p>' +
+        '<p><b>Entrega:</b> ' + atv.dataEntrega.split('-').reverse().join('/') + '</p>' +
         urgTag +
         (atv.desconto ? '<span class="tag-desconto">-' + atv.desconto + '%</span>' : '') +
         '</div>' +

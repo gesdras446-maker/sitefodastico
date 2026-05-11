@@ -157,6 +157,11 @@ footer {
     font-size: 1rem;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
 #atividadeForm input:focus,
 #popupDesconto input:focus {
     border-color: #4CAF50;
