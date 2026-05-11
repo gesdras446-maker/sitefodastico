@@ -1,5 +1,5 @@
-*{
-    color: #ffffff;
+* {
+    color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,110 +7,90 @@
 }
 
 body {
-    background-color: #000000;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-
-header{
-    text-align: center;
-    padding: 0px;
-    color: #ffffff;
-}
 .navbar {
     background-color: #6D0041;
     padding: 25px 10px;
-    align-items: center;
-    justify-content: space-between;
+    text-align: center;
 }
+
 .title {
-    background-color: #6D0041;
     font-size: 50px;
     font-weight: bold;
-    letter-spacing: 1px;
 }
+
 .links {
     display: flex;
     justify-content: center;
     gap: 200px;
-    margin-top: 20px;
-    margin-bottom: 5%;
+    margin: 20px 0;
 }
+
 .links a {
-    display: inline-block;
     padding: 10px 40px;
     background-color: #5A82B3;
-    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
+
 .links a:hover {
-  background-color: #D9D9D9;
-  color : #000000;
-}
-.avatar{
-    font-size: 20px;
-    border-bottom: 3px solid #ffffff;
-    padding-bottom: 5px;
-
-}
-.group{
-    display: flex;
-    flex-direction: column; 
-    gap: 30px;
-    align-items: center;
-    margin-top: 25px;
-    display: flex;   
-}
-.card {
-    display: flex;            
-    flex-direction: row;          
-    justify-content: space-between; 
-    align-items: center;
-    width: 500px;                
-    padding: 15px 20px;        
-    background-color: #b1b1b1;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.card:hover {
-    background-color: #211f1f;
-    color: #ffffff;
-}
-.card span, .card div {
-    
-    padding: 0; 
-    margin: 0;
-}
-footer {
-    background-color: #6D0041;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-
-
-
-.servicos-container {
-    background-color: transparent;
-    text-align: center;
-    font-family: sans-serif;
-    padding: 20px;
+    background-color: #D9D9D9;
+    color: #000;
 }
 
 .avatar {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 20px;
-    color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    border-bottom: 3px solid #fff;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    padding: 15px 20px;
+    background-color: #b1b1b1;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #211f1f;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(109, 0, 65, 0.4);
+}
+
+footer {
+    background-color: #6D0041;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+.servicos-container {
+    text-align: center;
+    padding: 20px;
 }
 
 .botoes-grupo {
@@ -122,43 +102,18 @@ footer {
 
 .btn {
     padding: 10px 25px;
-    border: 2px solid transparent;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
     background-color: #b1b1b1;
-    color: #ffffff;
 }
 
-.serv-html:hover {
-    background-color: #e34c26;
-    color: white;
-    transform: translateY(-3px);
-}
-
-.serv-css:hover {
-    background-color: #264de4;
-    color: white;
-    transform: translateY(-3px);
-}
-
-.serv-back:hover {
-    background-color: #444;
-    color: white;
-    transform: translateY(-3px);
-}
-
-.serv-js:hover {
-    background-color: #f7df1e;
-    color: #333;
-    transform: translateY(-3px);
-}
-
-.btn:active {
-    transform: scale(0.95);
-}
-
+.serv-html:hover { background-color: #e34c26; transform: translateY(-3px); }
+.serv-css:hover { background-color: #264de4; transform: translateY(-3px); }
+.serv-back:hover { background-color: #444; transform: translateY(-3px); }
+.serv-js:hover { background-color: #f7df1e; color: #333; transform: translateY(-3px); }
 
 .modal {
     display: none;
@@ -168,7 +123,6 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: transparent;
     backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
@@ -181,36 +135,9 @@ footer {
     text-align: center;
     width: 90%;
     max-width: 400px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ffffff;
 }
 
-.modal-content h3 {
-    margin-top: 0;
-    color: #000000;
-    font-size: 1.5rem;
-}
-
-.modal-content p {
-    color: #000000;
-    line-height: 1.6;
-}
-
-.btn-fechar {
-    margin-top: 20px;
-    background-color: #ff4757;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.btn-fechar:hover {
-    background-color: #ff6b81;
-}
+.modal-content h3 { font-size: 1.5rem; }
 
 #atividadeForm {
     display: flex;
@@ -220,27 +147,33 @@ footer {
     margin: 0 auto;
 }
 
-#atividadeForm label {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-#atividadeForm input {
+#atividadeForm input,
+#popupDesconto input {
     padding: 12px;
     border: 2px solid #ddd;
     border-radius: 8px;
-    color: #000000;
-    background-color: #ffffff;
+    color: #000;
+    background-color: #fff;
     font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#atividadeForm input:focus {
+#atividadeForm input:focus,
+#popupDesconto input:focus {
     border-color: #4CAF50;
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
     outline: none;
+}
+
+#popupDesconto input {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+    display: block;
+}
+
+#popupDesconto label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .btn-adicionar {
@@ -250,19 +183,113 @@ footer {
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: bold;
-    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
 }
 
 .btn-adicionar:hover {
     background: linear-gradient(135deg, #292d41, #3d3d3d);
     transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.btn-adicionar:active {
-    transform: translateY(0);
+.btn-fechar {
+    margin-top: 20px;
+    background-color: #ff4757;
+    color: #000;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
+.btn-fechar:hover { background-color: #ff6b81; }
+
+.Urgent {
+    background-color: #ff4757;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.Urgent:hover { background-color: #e03040; transform: translateY(-2px); }
+
+.Urgent-muito {
+    background-color: #d50000;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.Urgent-muito:hover { background-color: #b00000; transform: translateY(-2px); }
+
+.lista-atividades {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 25px 20px;
+    width: 100%;
+}
+
+.atividade-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    max-width: 90%;
+    background-color: #b1b1b1;
+    border-radius: 8px;
+    padding: 18px 22px;
+    transition: all 0.3s;
+}
+
+.atividade-card:hover { background-color: #211f1f; }
+.atividade-card.pronto { border-left: 4px solid #2ecc71; }
+.atividade-card.card-urgente { border-left: 4px solid #ff4757; }
+.atividade-card.card-muito-urgente { border-left: 4px solid #d50000; }
+
+.card-info { display: flex; flex-direction: column; gap: 4px; }
+.card-info p { font-size: 0.95rem; }
+.card-preco { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.card-preco b { font-size: 1.1rem; }
+.card-preco small { color: #aaffaa; }
+.card-botoes { display: flex; flex-direction: column; gap: 8px; margin-left: 15px; }
+
+.tag-urgente, .tag-muito-urgente, .tag-desconto {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.tag-urgente { background-color: #ff4757; }
+.tag-muito-urgente { background-color: #d50000; }
+.tag-desconto { background-color: #2ecc71; color: #000; margin-left: 5px; }
+
+.btn-pronto, .btn-excluir, .btn-desconto {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.btn-pronto { background-color: #2ecc71; color: #000; }
+.btn-pronto:hover { background-color: #27ae60; color: #fff; transform: translateY(-2px); }
+.btn-excluir { background-color: #ff4757; color: #000; }
+.btn-excluir:hover { background-color: #e63946; color: #fff; transform: translateY(-2px); }
+.btn-desconto { background-color: #f39c12; color: #000; }
+.btn-desconto:hover { background-color: #e67e22; color: #fff; transform: translateY(-2px); }
+
+.vazio { text-align: center; color: #888; font-size: 1.1rem; padding: 40px 0; }

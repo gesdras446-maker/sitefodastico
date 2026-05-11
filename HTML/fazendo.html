@@ -1,24 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sendo Realizado - Kyōkotsu</title>
     <link rel="stylesheet" href="../CSS/css.css">
 </head>
+
 <body>
-     <header class="navbar">
-    <h1 class="title">Kyōkotsu</h1>
+    <header class="navbar">
+        <h1 class="title">Kyōkotsu</h1>
     </header>
     <div class="links">
-        <a href="html.html">Paginal inicial</a>
-       <a href="novo.html">Novo Trabalho</a>
+        <a href="html.html">Página inicial</a>
         <a href="Pronto.html">Realizado</a>
     </div>
-    <div class="avatar">tabela de serviços</div>
+    <div class="avatar">Sendo feito</div>
+
+    <div id="listaFazendo" class="lista-atividades"></div>
+
+    <div id="popupDesconto" class="modal">
+        <div class="modal-content">
+            <h3>Aplicar Desconto</h3>
+            <label for="valorDesconto">Desconto (%):</label>
+            <input type="number" id="valorDesconto" min="1" max="100" placeholder="Ex: 10">
+            <button class="btn-adicionar" onclick="aplicarDesconto()">Aplicar</button>
+            <button class="btn-fechar" onclick="fecharDesconto()">Cancelar</button>
+        </div>
+    </div>
+
     <footer>
         ©2026 Todos os direitos reservados.
     </footer>
-   <script src="../JS/js.js"></script>
+    <script src="../JS/js.js"></script>
 </body>
+
 </html>
