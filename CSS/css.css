@@ -298,3 +298,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .btn-desconto:hover { background-color: #e67e22; color: #fff; transform: translateY(-2px); }
 
 .vazio { text-align: center; color: #888; font-size: 1.1rem; padding: 40px 0; }
+
+@media (max-width: 480px){
+    body{
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    body{
+        font-size: 25px;
+    }
+}
