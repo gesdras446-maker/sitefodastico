@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanner QR - Kyōkotsu</title>
+    <link rel="stylesheet" href="../CSS/css.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <h1 class="title">Kyōkotsu</h1>
+    </header>
+    <div class="links">
+        <a href="qrcode.html" class="active">📷 Scanner QR</a>
+        <a href="Relatorio.html">📋 Relatório</a>
+    </div>
+
+    <div class="avatar">Scanner de QR Code</div>
+
+    <div id="secaoScanner" class="scanner-wrapper">
+
+        <!-- Câmera -->
+        <div class="scanner-box">
+            <div class="scanner-icon">📷</div>
+            <h2>Escanear QR Code da Peça</h2>
+            <p>Aponte a câmera para o QR Code da peça para abrir o relatório completo.</p>
+            <button id="btnIniciarScanner" class="btn-scanner" onclick="iniciarScanner()">
+                Abrir Câmera
+            </button>
+            <div id="scannerContainer" class="scanner-container" style="display:none;">
+                <video id="videoScanner" autoplay playsinline></video>
+                <div class="scanner-overlay">
+                    <div class="scanner-frame">
+                        <span class="corner tl"></span>
+                        <span class="corner tr"></span>
+                        <span class="corner bl"></span>
+                        <span class="corner br"></span>
+                        <div class="scan-line"></div>
+                    </div>
+                </div>
+                <canvas id="canvasScanner" style="display:none;"></canvas>
+            </div>
+            <button id="btnPararScanner" class="btn-parar" onclick="pararScanner()" style="display:none;">
+                Cancelar
+            </button>
+            <div id="erroScanner" class="erro-scanner" style="display:none;"></div>
+        </div>
+
+        <!-- Busca Manual -->
+        <div class="manual-box">
+            <h3>Ou buscar pelo ID da peça</h3>
+            <div class="busca-grupo">
+                <input type="text" id="inputManual" placeholder="Cole o ID da atividade aqui..." />
+                <button class="btn-buscar" onclick="buscarManual()">Buscar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        ©2026 Todos os direitos reservados.
+    </footer>
+
+    <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="../JS/js.js"></script>
+</body>
+
+</html>
